@@ -1,0 +1,13 @@
+name: Automatically close pull requests
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: superbrothers/close-pull-request@v3
+      with:
+        comment: "This is an issues-only repository. We do not accept pull requests as this repository does not contain code. If you have any questions, please feel free to contact us or open an issue."
